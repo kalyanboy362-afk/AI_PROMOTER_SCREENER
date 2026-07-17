@@ -59,3 +59,102 @@ class NSEDownloader:
         # এখানেই পরের ধাপে সব Downloader কল হবে
 
         print("Downloader Finished")
+            def download_insider(self):
+
+        print("Downloading Insider Trading...")
+
+        url = (
+            "https://www.nseindia.com/api/corporates-pit?"
+            "index=equities"
+        )
+
+        try:
+
+            self.download_file(
+                url,
+                "CF_Insider.csv"
+            )
+
+        except Exception as e:
+
+            print("Insider Download Failed :", e)
+
+
+    def download_shareholding(self):
+
+        print("Downloading Shareholding...")
+
+        url = (
+            "https://www.nseindia.com/api/corporate-share-holdings"
+        )
+
+        try:
+
+            self.download_file(
+                url,
+                "CF_Shareholding.csv"
+            )
+
+        except Exception as e:
+
+            print(e)
+
+
+    def download_sast(self):
+
+        print("Downloading SAST...")
+
+        url = (
+            "https://www.nseindia.com/api/corporate-sast"
+        )
+
+        try:
+
+            self.download_file(
+                url,
+                "CF_SAST.csv"
+            )
+
+        except Exception as e:
+
+            print(e)
+
+
+    def download_pledged(self):
+
+        print("Downloading Pledged Data...")
+
+        url = (
+            "https://www.nseindia.com/api/corporate-pledged"
+        )
+
+        try:
+
+            self.download_file(
+                url,
+                "CF_Pledged.csv"
+            )
+
+        except Exception as e:
+
+            print(e)
+
+
+    def download_equity(self):
+
+        print("Downloading EQUITY LIST...")
+
+        url = (
+            "https://archives.nseindia.com/content/equities/EQUITY_L.csv"
+        )
+
+        try:
+
+            self.download_file(
+                url,
+                "EQUITY_L.csv"
+            )
+
+        except Exception as e:
+
+            print(e)
